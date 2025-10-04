@@ -4,12 +4,12 @@ import java.io.*;
 public class Autor {
     private String id;
     private String nombre;
-    private HashSet<Publicacion> listaPublicaciones;
+    private HashSet<String> listaPublicacionesId;
 
     public Autor(String pId, String pNombre) {
         this.id = pId;
         this.nombre = pNombre;
-        this.listaPublicaciones = new HashSet<Publicacion>();
+        this.listaPublicacionesId = new HashSet<String>();
     }
 
     public String getId() {
@@ -20,12 +20,13 @@ public class Autor {
         return nombre;
     }
 
-    public HashSet<Publicacion> getListaPublicaciones() {
-        return listaPublicaciones;
+    public HashSet<String> getListaPublicacionesId() {
+        return listaPublicacionesId;
     }
 
-    public void addPublicacion(Publicacion publicacion) {
-        listaPublicaciones.add(publicacion);
+    public void añadirPublicacionId(String pPubId) {
+        listaPublicacionesId.add(pPubId);
     }
 
 }
+
