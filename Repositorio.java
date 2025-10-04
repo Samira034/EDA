@@ -75,24 +75,16 @@ public class Repositorio {
         }
     }
 
-    public void readFile(String nom) {
-        try {
-            Scanner entrada = new Scanner(new FileReader(nom));
-
-            String linea;
-            int cont = 0;
-            while (entrada.hasNext()) {
-                linea = entrada.nextLine();
-                cont++;
-                if ((cont % 10000) == 0) System.out.println("Lineas: " + cont + "\t" + linea);
-            }
-
-            entrada.close();
-        } // try
-        catch (IOException e) {
-            e.printStackTrace();
+    public void añadirAutorAPub (String pIdAutor, String pIdPub){
+        Autor autor =listaAutores.get(pIdAutor);
+        Publicacion pub =listaPublicacion.get(pIdPub);
+        if (autor!=null && pub!=null){
+            pub.añadirAutorId(pIdAutor);
+            autor.añadirPubId(pIdPub);
         }
     }
+        
+
 
     public void crearFichero(String nomF, String[] lineas) {
         // output: se han escrito las líneas en el fichero de nombre nomF
@@ -206,4 +198,5 @@ public class Repositorio {
         sc.close();
     }
 }
+
 
