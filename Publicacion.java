@@ -5,14 +5,14 @@ public class Publicacion {
 
     private String id;
     private String titulo;
-    private HashSet<Autor> listaAutores;
-    private HashSet<Publicacion> listaCitadas;
+    private HashSet<String> listaIdAutores;
+    private HashSet<String> listaIdCitadas;
 
     public Publicacion(String pId, String pTitulo) {
         this.id = pId;
         this.titulo = pTitulo;
-        this.listaAutores = new HashSet<Autor>();
-        this.listaCitadas = new HashSet<Publicacion>();
+        this.listaIdAutores = new HashSet<String>();
+        this.listaIdCitadas = new HashSet<String>();
 
 
     }
@@ -25,20 +25,21 @@ public class Publicacion {
         return titulo;
     }
 
-    public HashSet<Autor> getListaAutores() {
-        return listaAutores;
+    public HashSet<String> getListaIdAutores() {
+        return listaIdAutores;
     }
 
-    public HashSet<Publicacion> getListaCitadas() {
-        return listaCitadas;
+    public HashSet<Publicacion> getListaIdCitadas() {
+        return listaIdCitadas;
     }
 
-    public void addAutor(Autor autor) {
-        listaAutores.add(autor);
+    public void addIdAutor(String pId) {
+        listaIdAutores.add(pId);
     }
 
-    public void addCitada(Publicacion publicacion) {
-        listaCitadas.add(publicacion);
+    public void addIdCitada(String pId) {
+        listaIdCitadas.add(pId);
     }
 }
+
 
